@@ -5,6 +5,7 @@
   "unity": "6000.0",
   "version": "1.0.0",
   "category": "editor extensions",
+  "documentationUrl": "https://github.com/itsJimothy/Unity-Utilities/blob/main/Documentation~/UnityUtilities.md",
   "author": {
     "name": "Jimothy",
     "url": "https://www.jimothy.io"
