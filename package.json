@@ -2,7 +2,8 @@
   "name": "io.jimothy.unityutilities",
   "displayName": "Unity Utility Library",
   "description": "Unity Utility Library, a set of various utilities meant to make improve your Unity workflow.",
-  "version": "0.0.1",
+  "unity": "6000.0",
+  "version": "1.0.0",
   "category": "editor extensions",
   "author": {
     "name": "Jimothy",
