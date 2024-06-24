@@ -8,6 +8,10 @@ Import via the Unity package manager using this URL:
 
 `https://github.com/itsJimothy/Unity-Utilities`
 
+## Documentation
+
+- [Documentation~/UnityUtilities.md](Documentation~/UnityUtilities.md)
+
 ## Credits
 
 Many of these utilities were inspired by or flat out shamelessly stolen from Adam Myhre:
