@@ -1,0 +1,11 @@
+{
+  "name": "io.jimothy.unityutilities",
+  "displayName": "Unity Utility Library",
+  "description": "Unity Utility Library, a set of various utilities meant to make improve your Unity workflow.",
+  "version": "0.0.1",
+  "category": "editor extensions",
+  "author": {
+    "name": "Jimothy",
+    "url": "https://www.jimothy.io"
+  }
+}
