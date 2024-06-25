@@ -6,7 +6,7 @@ Various Unity Utilities that make my life easier on a regular basis.
 
 Import via the Unity package manager using this URL:
 
-`https://github.com/itsJimothy/Unity-Utilities`
+`https://github.com/itsJimothy/Unity-Utilities.git`
 
 ## Documentation
 
