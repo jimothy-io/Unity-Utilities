@@ -39,3 +39,8 @@
 
     - Vector3 Add(this Vector3 vector, float x = 0, float y = 0, float z = 0)
     - Vector3 With(this Vector3 vector, float? x = null, float? y = null, float? z = null)
+
+- **Audio Extensions**:
+
+    - float ToLogarithmicVolume(this float sliderValue)
+    - float ToLogarithmicFraction(this float fraction)
