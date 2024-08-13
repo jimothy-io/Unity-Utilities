@@ -1,7 +1,31 @@
+## Timers
+- `Timer`: An abstract timer class implemented.
+  - void Tick(float deltaTime)
+    - Call in Update method to progress timer.
+  - void Reset()
+    - Resets the timer to its initial state.
+  - bool IsRunning()
+  - bool GetTime()
+  - bool Pause()
+  - bool Resume()
+  - Action OnTimerStart
+    - Event that gets invoked when the timer starts.
+  - Action OnTimerStop
+    - Event that gets invoked when the timer stops.
+  - float Progress
+    - The current progress of the timer as a fraction.
+  - Concrete classes:
+    - `StopwatchTimer`: A timer that counts up.
+      - override void Progress(float deltaTime)
+        - Always returns -1f
+    - `CountdownTimer`: A timer that counts down.
+      - bool IsFinished
+        - Returns true when the timer has reached zero.
+
 ## Singletons
 
-- **Singleton\<T>:**: A regular ol' MonoBehaviour generic singleton.
-- **PersistentSingleton\<T>:**: A generic singleton that persists between scenes.
+- `Singleton\<T>:`: A regular ol' MonoBehaviour generic singleton.
+- `PersistentSingleton\<T>:`: A generic singleton that persists between scenes.
 
 ## Extension Methods
 
