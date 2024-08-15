@@ -7,7 +7,6 @@ namespace Jimothy.Utilities.Editor
     public static class InspectorLocker
     {
         private static readonly MethodInfo FlipLocked;
-        private static readonly PropertyInfo ConstrainProportions;
         private const BindingFlags Flags = BindingFlags.NonPublic | BindingFlags.Instance;
 
         static InspectorLocker()
@@ -17,8 +16,6 @@ namespace Jimothy.Utilities.Editor
                 typeof(EditorGUIUtility).Assembly.GetType(
                     "UnityEditor.EditorGUIUtility+EditorLockTracker");
             FlipLocked = editorLockTrackerType.GetMethod("FlipLocked", Flags);
-
-            ConstrainProportions = typeof(Transform).GetProperty("constrainProportions", Flags);
         }
         
         [MenuItem("Edit/Lock Inspector %l")]
