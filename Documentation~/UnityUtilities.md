@@ -1,3 +1,8 @@
+## Editor Tools
+- `Inspector Locker`: Locks the inspector with a keyboard shortcut and menu item.
+  - Menu item: `Edit/Lock Inspector`
+  - Keyboard shortcut: `Cmd + L`
+
 ## Timers
 - `Timer`: An abstract timer class implemented.
   - void Tick(float deltaTime)

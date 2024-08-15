@@ -1,3 +1,7 @@
+## [1.3.0] - 2024-08-15
+### Adds inspector lock keyboard shortcut
+- Adds a keyboard shortcut and menu item for the "inspector lock" feature.
+
 ## [1.2.0] - 2024-08-13
 ### Adds timer classes
 - Adds an abstract `Timer` class and the following concrete classes:
