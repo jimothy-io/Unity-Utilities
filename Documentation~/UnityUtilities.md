@@ -1,3 +1,27 @@
+## Animation Post Processing
+### How to use:
+- Create an AnimationPostProcessingSO scriptable object:
+  - Menu item: `AnimationPostProcessor/Settings`
+- The scriptable object just needs to exist within the project. DO NOT make more than one. Only the first one found will be used.
+- AnimationsPostProcessingSO has the following properties:
+  - bool Enabled
+  - string TargetFolder
+  - Avatar ReferenceAvatar
+  - GameObject ReferenceFBX
+  - bool EnableTranslationDoF
+  - ModelImporterAnimationType AnimationType
+  - bool LoopTime
+  - bool RenameClips
+  - bool ForceEditorApply
+  - bool ExtractTextures
+- Consider keeping `Enabled` set to false until you are ready to import your animations and set it to false afterwards as well to prevent unnecessary warnings and/or errors.
+- Import your model and configure the settings as needed.
+- Import an animation and configure the Settings SO as needed.
+- Attach the example avatar and animation FBX to the Settings SO.
+- Set `Enabled` to true.
+- Import your animations in the `TargetFolder` specified in the Settings SO. Default: `Assets/_Project/Animations` (or a subfolder).
+- They should now have the same settings applied to them as your example animation as well as the specified settings in the Settings SO.
+
 ## Editor Tools
 - `Inspector Locker`: Locks the inspector with a keyboard shortcut and menu item.
   - Menu item: `Edit/Lock Inspector`
