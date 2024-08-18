@@ -1,3 +1,7 @@
+## [1.4.0] - 2024-08-18
+### Adds animation post processing
+- Adds a ScriptableObject `AnimationPostProcessingSO` that allows for batch processing of imported animations.
+
 ## [1.3.0] - 2024-08-15
 ### Adds inspector lock keyboard shortcut
 - Adds a keyboard shortcut and menu item for the "inspector lock" feature.
