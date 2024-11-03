@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace AnimationPostProcessing
+namespace Jimothy.Utilities.AnimationPostProcessing
 {
     [CreateAssetMenu(fileName = "AnimationSettings", menuName = "AnimationPostProcessor/Settings", order = 1)]
     public class AnimationPostProcessingSettingsSO : ScriptableObject {

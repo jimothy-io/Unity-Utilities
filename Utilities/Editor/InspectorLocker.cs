@@ -1,8 +1,6 @@
-using System.Reflection;
-using UnityEngine;
 using UnityEditor;
 
-namespace Jimothy.Utilities.Editor
+namespace Jimothy.Utilities
 {
     public static class InspectorLocker
     {

@@ -3,7 +3,7 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-namespace AnimationPostProcessing
+namespace Jimothy.Utilities.AnimationPostProcessing
 {
     public class AnimationPostProcessor : AssetPostprocessor
     {
