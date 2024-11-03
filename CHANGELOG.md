@@ -1,3 +1,7 @@
+## [1.4.1] - 2024-11-03
+### Fix build errors
+- Creates Editor assembly definitions for all editor scripts to prevent build errors.
+
 ## [1.4.0] - 2024-08-18
 ### Adds animation post processing
 - Adds a ScriptableObject `AnimationPostProcessingSO` that allows for batch processing of imported animations.
