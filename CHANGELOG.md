@@ -1,5 +1,9 @@
+## [1.4.2] - 2025-03-02
+### Adds audio extension method
+- Adds inverse of existing SliderToLogarithmicVolume extension method; LogarithmicVolumeToSlider.
+
 ## [1.4.1] - 2024-11-03
-### Fix build errors
+### Fixes build errors
 - Creates Editor assembly definitions for all editor scripts to prevent build errors.
 
 ## [1.4.0] - 2024-08-18

@@ -16,6 +16,14 @@ namespace Jimothy.Utilities.Extensions
         {
             return Mathf.Log10(Mathf.Max(sliderValue, 0.0001f)) * 20;
         }
+        
+        /// <summary>
+        /// Converts a decibel value to a non-clamped slider value.
+        /// </summary>
+        public static float LogarithmicVolumeToSlider(this float decibels)
+        {
+            return Mathf.Pow(10, decibels / 20);
+        }
 
         /// <summary>
         /// Converts a fraction in range [0, 1] to a logarithmic scale in range [0, 1].
@@ -25,6 +33,5 @@ namespace Jimothy.Utilities.Extensions
         {
             return Mathf.Log(1 + 9 * fraction) / Mathf.Log10(10);
         }
-        
     }
 }

@@ -97,3 +97,4 @@
 
     - float ToLogarithmicVolume(this float sliderValue)
     - float ToLogarithmicFraction(this float fraction)
+    - float LogarithmicVolumeToSlider(this float decibels)
