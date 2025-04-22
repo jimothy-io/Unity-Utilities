@@ -1,9 +1,9 @@
 using System;
 using System.Collections;
-using UnityEngine;
 using Jimothy.Utilities.Extensions;
+using UnityEngine;
 
-namespace Jimothy
+namespace Jimothy.Utilities.Tools
 {
     public class SquashAndStretcher : MonoBehaviour
     {
@@ -27,7 +27,7 @@ namespace Jimothy
 
         private Coroutine _coroutine;
         private Vector3 _initialScaleVector;
-        private static event Action _squashAndStretchAll;
+        private static event Action SquashAndStretchAllTriggered;
 
         private bool AffectX => (_axes & SquashStretchAxes.X) != 0;
         private bool AffectY => (_axes & SquashStretchAxes.Y) != 0;
@@ -49,7 +49,7 @@ namespace Jimothy
             {
                 _target = transform;
             }
-            
+
             _initialScaleVector = _target.localScale;
 
             if (_animationDuration <= 0f)
@@ -77,7 +77,6 @@ namespace Jimothy
 
             if (_playAlways || UnityEngine.Random.value <= _chanceToPlay)
             {
-                Debug.Log($"Squash and stretch played on {_target.name}.");
                 _coroutine = StartCoroutine(SquashAndStretchRoutine());
             }
         }
@@ -101,12 +100,12 @@ namespace Jimothy
                     AffectY ? _initialScaleVector.y * remappedValue : _initialScaleVector.y / remappedValue;
                 modifiedScale.z =
                     AffectZ ? _initialScaleVector.z * remappedValue : _initialScaleVector.z / remappedValue;
-                
+
                 _target.localScale = modifiedScale;
 
                 yield return null;
             }
-            
+
             _target.localScale = _initialScaleVector;
             _coroutine = null;
         }
@@ -114,9 +113,9 @@ namespace Jimothy
         [ContextMenu("Play All")]
         public void SquashAndStretchAll()
         {
-            _squashAndStretchAll?.Invoke();
+            SquashAndStretchAllTriggered?.Invoke();
         }
-        
+
         public void Reset()
         {
             this.StopAndNullifyCoroutine(ref _coroutine);
@@ -125,12 +124,12 @@ namespace Jimothy
 
         private void OnEnable()
         {
-            _squashAndStretchAll += Play;
+            SquashAndStretchAllTriggered += Play;
         }
 
         private void OnDisable()
         {
-            _squashAndStretchAll -= Play;
+            SquashAndStretchAllTriggered -= Play;
         }
     }
 }
