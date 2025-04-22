@@ -1,3 +1,7 @@
+## [1.5.0] - 2025-04-22
+### Adds coroutine MonoBehaviour extension method
+- Adds StopAndNullifyCoroutine extension method to MonoBehaviour.
+
 ## [1.4.2] - 2025-03-02
 ### Adds audio extension method
 - Adds inverse of existing SliderToLogarithmicVolume extension method; LogarithmicVolumeToSlider.
