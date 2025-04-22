@@ -1,10 +1,14 @@
+## [1.6.0] - 2025-04-22
+### Adds squash and stretch MonoBehaviour
+- Adds `SquashAndStretch` MonoBehaviour component to tools.
+
 ## [1.5.0] - 2025-04-22
 ### Adds coroutine MonoBehaviour extension method
-- Adds StopAndNullifyCoroutine extension method to MonoBehaviour.
+- Adds `StopAndNullifyCoroutine` extension method to MonoBehaviour.
 
 ## [1.4.2] - 2025-03-02
 ### Adds audio extension method
-- Adds inverse of existing SliderToLogarithmicVolume extension method; LogarithmicVolumeToSlider.
+- Adds inverse of existing `SliderToLogarithmicVolume` extension method; LogarithmicVolumeToSlider.
 
 ## [1.4.1] - 2024-11-03
 ### Fixes build errors
