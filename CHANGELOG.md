@@ -8,15 +8,15 @@
 
 ## [1.4.2] - 2025-03-02
 ### Adds audio extension method
-- Adds inverse of existing `SliderToLogarithmicVolume` extension method; LogarithmicVolumeToSlider.
+- Adds inverse of existing `SliderToLogarithmicVolume` extension method; `LogarithmicVolumeToSlider`.
 
 ## [1.4.1] - 2024-11-03
 ### Fixes build errors
-- Creates Editor assembly definitions for all editor scripts to prevent build errors.
+- Creates editor assembly definitions for all editor scripts to prevent build errors.
 
 ## [1.4.0] - 2024-08-18
 ### Adds animation post processing
-- Adds a ScriptableObject `AnimationPostProcessingSO` that allows for batch processing of imported animations.
+- Adds a scriptable object `AnimationPostProcessingSO` that allows for batch processing of imported animations.
 
 ## [1.3.0] - 2024-08-15
 ### Adds inspector lock keyboard shortcut
@@ -42,5 +42,5 @@
   - `Vector2`
   - `Vector3`
 - Adds singleton implementations:
-  - MonoBehaviour
-  - Persistent MonoBehaviour
+  - `MonoBehaviour`
+  - Persistent `MonoBehaviour`
