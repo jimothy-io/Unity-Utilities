@@ -98,3 +98,10 @@
     - float ToLogarithmicVolume(this float sliderValue)
     - float ToLogarithmicFraction(this float fraction)
     - float LogarithmicVolumeToSlider(this float decibels)
+
+- **Tools**:
+    - `SquashAndStretch`: A MonoBehaviour that allows for squash and stretch animations.
+
+- **Data**:
+    - `RuntimeScriptableObject`: An abstract class that ensure proper initialization of runtime Scriptable Objects.
+

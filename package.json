@@ -3,7 +3,7 @@
 	"displayName": "Unity Utility Library",
 	"description": "Unity Utility Library, a set of various utilities meant to make improve your Unity workflow.",
 	"unity": "6000.0",
-	"version": "1.6.0",
+	"version": "1.7.0",
 	"category": "editor extensions",
 	"documentationUrl": "https://github.com/itsJimothy/Unity-Utilities/blob/main/Documentation~/UnityUtilities.md",
 	"author": {
