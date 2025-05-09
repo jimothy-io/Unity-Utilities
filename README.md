@@ -10,10 +10,10 @@ Import via the Unity package manager using this URL:
 
 ## Documentation
 
-- [Documentation~/UnityUtilities.md](Documentation~/UnityUtilities.md)
+- [Documentation~/index.md](Documentation~/index.md)
 
 ## Credits
 
-Many of these utilities were inspired by or flat out shamelessly stolen from Adam Myhre:
+Many of these utilities were inspired by or flat out shamelessly ripped from Adam Myhre:
 - [github.com/adammyhre](https://github.com/adammyhre)
 - [youtube.com/@git-amend](https://www.youtube.com/@git-amend)

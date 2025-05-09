@@ -1,5 +1,4 @@
 ## Animation Post Processing
-### How to use:
 - Create an AnimationPostProcessingSO scriptable object:
   - Menu item: `AnimationPostProcessor/Settings`
 - The scriptable object just needs to exist within the project. DO NOT make more than one. Only the first one found will be used.
