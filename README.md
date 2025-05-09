@@ -10,7 +10,7 @@ Import via the Unity package manager using this URL:
 
 ## Documentation
 
-- [Documentation~/index.md](Documentation~/index.md)
+- [Documentation~/UnityUtilities.md](Documentation~/UnityUtilities.md)
 
 ## Credits
 
