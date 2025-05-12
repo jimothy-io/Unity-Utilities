@@ -21,10 +21,14 @@
 - Import your animations in the `TargetFolder` specified in the Settings SO. Default: `Assets/_Project/Animations` (or a subfolder).
 - They should now have the same settings applied to them as your example animation as well as the specified settings in the Settings SO.
 
+---
+
 ## Editor Tools
 - `Inspector Locker`: Locks the inspector with a keyboard shortcut and menu item.
   - Menu item: `Edit/Lock Inspector`
   - Keyboard shortcut: `Cmd + L`
+
+---
 
 ## Timers
 - `Timer`: An abstract timer class implemented.
@@ -50,10 +54,14 @@
       - bool IsFinished
         - Returns true when the timer has reached zero.
 
+---
+
 ## Singletons
 
 - `Singleton\<T>:`: A regular ol' MonoBehaviour generic singleton.
 - `PersistentSingleton\<T>:`: A generic singleton that persists between scenes.
+
+---
 
 ## Extension Methods
 
@@ -98,8 +106,12 @@
     - float ToLogarithmicFraction(this float fraction)
     - float LogarithmicVolumeToSlider(this float decibels)
 
+---
+
 - **Tools**:
     - `SquashAndStretch`: A MonoBehaviour that allows for squash and stretch animations.
+
+---
 
 - **Data**:
     - `RuntimeScriptableObject`: An abstract class that ensure proper initialization of runtime Scriptable Objects.
