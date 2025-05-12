@@ -18,7 +18,7 @@ Or import via Unity Package Manager with the following URL:
 
 ### Documentation
 
-- [Documentation~/UnityUtilities.md](Documentation~/UnityUtilities.md)
+[Documentation~/index.md](Documentation)
 
 ---
 
