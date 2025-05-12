@@ -18,7 +18,7 @@ Or import via Unity Package Manager with the following URL:
 
 ### Documentation
 
-[Documentation~/index.md](Documentation)
+[Documentation](Documentation~/index.md)
 
 ---
 
@@ -27,3 +27,15 @@ Or import via Unity Package Manager with the following URL:
 Many of these utilities were inspired by or flat out shamelessly ripped from Adam Myhre:
 - [github.com/adammyhre](https://github.com/adammyhre)
 - [youtube.com/@git-amend](https://www.youtube.com/@git-amend)
+
+---
+
+### License
+
+This project is licensed under the [Unlicense license](./LICENSE.md).
+
+---
+
+### Contact
+
+Please don't contact me. This package is provided as-is for you to use - or not to use - however you see fit.

@@ -1,8 +1,8 @@
 ## [Unreleased]
 
 ## [1.8.0] - 2025-05-12
-### Renames packages and updates documentation
-- Renames `Unity Utility Library` to `jUnityUtilities`.
+### Renames package and updates documentation
+- Renames this package from `Unity Utility Library` to `jUnityUtilities`.
 
 ---
 
