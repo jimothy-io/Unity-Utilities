@@ -1,3 +1,7 @@
+## Animator
+### AnimatorState preview
+- A preview of the AnimatorState in the inspector of the AnimatorController.
+
 ## Animation Post Processing
 - Create an AnimationPostProcessingSO scriptable object:
   - Menu item: `AnimationPostProcessor/Settings`
