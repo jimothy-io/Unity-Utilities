@@ -3,7 +3,7 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-namespace Jimothy.Utilities.AnimationPostProcessing
+namespace Jimothy.Utilities.Editor.AnimationPostProcessing
 {
     public class AnimationPostProcessor : AssetPostprocessor
     {
@@ -68,9 +68,9 @@ namespace Jimothy.Utilities.AnimationPostProcessing
             // Use reflection to instantiate an Editor and call the Apply method as if the Apply button was pressed.
             if (_settings.ForceEditorApply)
             {
-                var editorType = typeof(Editor).Assembly.GetType("UnityEditor.ModelImporterEditor");
+                var editorType = typeof(UnityEditor.Editor).Assembly.GetType("UnityEditor.ModelImporterEditor");
                 var nonPublic = BindingFlags.NonPublic | BindingFlags.Instance;
-                var editor = Editor.CreateEditor(importer, editorType);
+                var editor = UnityEditor.Editor.CreateEditor(importer, editorType);
                 editorType.GetMethod("Apply", nonPublic).Invoke(editor, null);
                 UnityEngine.Object.DestroyImmediate(editor);
             }
