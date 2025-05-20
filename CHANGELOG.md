@@ -1,4 +1,11 @@
 ## [Unreleased]
+
+---
+
+## [1.9.1] - 2025-05-20
+### Fixes minor bugs
+- Fixes namespace conflicts.
+
 ## [1.9.0] - 2025-05-20
 ### Adds animator state preview
 - Adds animation preview to animation controller inspector.
