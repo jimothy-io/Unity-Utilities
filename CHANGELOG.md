@@ -1,4 +1,7 @@
 ## [Unreleased]
+## [1.9.0] - 2025-05-20
+### Adds animator state preview
+- Adds animation preview to animation controller inspector.
 
 ## [1.8.0] - 2025-05-12
 ### Renames package and updates documentation

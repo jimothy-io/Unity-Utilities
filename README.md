@@ -1,6 +1,6 @@
 ## jUnityUtilities
 
-Various utilities that make Unity development more enjoyable.
+Various utilities that make Unity development more efficient.
 
 ---
 
@@ -24,9 +24,10 @@ Or import via Unity Package Manager with the following URL:
 
 ### Credits
 
-Many of these utilities were inspired by or flat out shamelessly ripped from Adam Myhre:
+Many of these utilities were inspired by or flat out shamelessly ripped from the following creators:
 - [github.com/adammyhre](https://github.com/adammyhre)
 - [youtube.com/@git-amend](https://www.youtube.com/@git-amend)
+- [youtube.com/@WarpedImagination](https://www.youtube.com/@WarpedImagination)
 
 ---
 
