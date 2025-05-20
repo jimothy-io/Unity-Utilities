@@ -8,6 +8,7 @@ namespace Jimothy.Utilities.Editor.Animator
     public class AnimatorStateObjectPreview : ObjectPreview
     {
         private UnityEditor.Editor _preview;
+        private int _animationClipId;
 
         public override void Initialize(Object[] targets)
         {
@@ -15,10 +16,11 @@ namespace Jimothy.Utilities.Editor.Animator
 
             if (targets.Length > 1 || Application.isPlaying) return;
 
-            AnimatorState state = (AnimatorState)target;
-            if (state.motion && state.motion is AnimationClip animationClip)
+            AnimationClip clip = GetAnimationClip(target as AnimatorState);
+            if (clip != null)
             {
-                _preview = UnityEditor.Editor.CreateEditor(animationClip);
+                _preview = UnityEditor.Editor.CreateEditor(clip);
+                _animationClipId = clip.GetInstanceID();
             }
         }
 
@@ -31,6 +33,15 @@ namespace Jimothy.Utilities.Editor.Animator
         {
             base.OnInteractivePreviewGUI(r, background);
 
+            AnimationClip currentClip = GetAnimationClip(target as AnimatorState);
+            if (currentClip != null && currentClip.GetInstanceID() != _animationClipId)
+            {
+                CleanupPreviewEditor();
+                _preview = UnityEditor.Editor.CreateEditor(currentClip);
+                _animationClipId = currentClip.GetInstanceID();
+                return;
+            }
+
             if (_preview != null)
             {
                 _preview.OnInteractivePreviewGUI(r, background);
@@ -41,10 +52,21 @@ namespace Jimothy.Utilities.Editor.Animator
         {
             base.Cleanup();
 
+            CleanupPreviewEditor();
+        }
+
+        private AnimationClip GetAnimationClip(AnimatorState state)
+        {
+            return state?.motion as AnimationClip;
+        }
+
+        private void CleanupPreviewEditor()
+        {
             if (_preview != null)
             {
                 Object.DestroyImmediate(_preview);
                 _preview = null;
+                _animationClipId = 0;
             }
         }
     }
