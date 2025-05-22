@@ -2,6 +2,12 @@
 
 ---
 
+## [1.10.0] - 2025-05-22
+### Adds new attribute
+- Adds `[Required]` field attribute to mark fields as required in the inspector.
+
+---
+
 ## [1.9.1] - 2025-05-20
 ### Fixes minor bugs
 - Fixes namespace conflicts.
