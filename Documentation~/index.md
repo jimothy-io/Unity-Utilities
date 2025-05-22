@@ -31,7 +31,9 @@
 - `Inspector Locker`: Locks the inspector with a keyboard shortcut and menu item.
   - Menu item: `Edit/Lock Inspector`
   - Keyboard shortcut: `Cmd + L`
-
+- `Required` field attribute.
+  - Mark a field as required in the inspector.
+  - 
 ---
 
 ## Timers
