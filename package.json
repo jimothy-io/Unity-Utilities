@@ -3,7 +3,7 @@
 	"displayName": "jUnityUtilities",
 	"description": "Various utilities that make Unity development more enjoyable.",
 	"unity": "6000.0",
-	"version": "1.10.0",
+	"version": "1.10.1",
 	"documentationUrl": "https://github.com/itsJimothy/Unity-Utilities/blob/main/Documentation~/index.md",
 	"author": {
 		"name": "Jimothy",
