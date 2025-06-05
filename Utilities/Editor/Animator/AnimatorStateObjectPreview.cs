@@ -26,7 +26,6 @@ namespace Jimothy.Utilities.Editor.Animator
             AnimationClip clip = GetAnimationClip(target as AnimatorState);
             if (clip != null)
             {
-                AnimationClipEditor editor = UnityEditor.Editor.CreateEditor(clip) as AnimationClipEditor;
                 _preview = UnityEditor.Editor.CreateEditor(clip);
                 _animationClipId = clip.GetInstanceID();
             }
