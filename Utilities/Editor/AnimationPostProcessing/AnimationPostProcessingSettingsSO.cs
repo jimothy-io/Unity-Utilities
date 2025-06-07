@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Jimothy.Utilities.Editor.AnimationPostProcessing
 {
-    [CreateAssetMenu(fileName = "AnimationSettings", menuName = "AnimationPostProcessor/Settings", order = 1)]
+    [CreateAssetMenu(fileName = "AnimationSettings", menuName = "jUtilities/AnimationPostProcessor/Settings")]
     public class AnimationPostProcessingSettingsSO : ScriptableObject {
         public bool Enabled = false;
         public string TargetFolder = "Assets/_Project/Animations";

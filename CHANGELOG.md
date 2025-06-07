@@ -2,9 +2,17 @@
 
 ---
 
+## [1.10.2] - 2025-06-07
+### Cleans up context menu items
+- Organize context menu items into submenus.
+
+---
+
 ## [1.10.1] - 2025-06-05
 ### Fixes minor bugs
 - Uncaps animation preview length.
+
+---
 
 ## [1.10.0] - 2025-05-22
 ### Adds new attribute
