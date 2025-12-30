@@ -1,5 +1,6 @@
 ## [Unreleased]
 
+- Add VisualElement extension methods.
 ---
 
 ## [1.10.2] - 2025-06-07

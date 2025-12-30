@@ -1,7 +1,9 @@
 {
     "name": "Editor",
     "rootNamespace": "Jimothy.Utilities",
-    "references": [],
+    "references": [
+        "GUID:4155ccc9dae814bda8f7b79f82e654c3"
+    ],
     "includePlatforms": [
         "Editor"
     ],
