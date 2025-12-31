@@ -28,6 +28,23 @@ namespace Jimothy.Utilities.Editor.Toolbar
                 Time.timeScale = 1f;
                 MainToolbar.Refresh("Timescale/Slider");
             });
+
+            MainToolbarElementStyler.StyleElement<EditorToolbarButton>("Timescale/Reset", element =>
+            {
+                element.style.paddingLeft = 0f;
+                element.style.paddingRight = 0f;
+                element.style.marginLeft = 0f;
+                element.style.marginRight = 0f;
+                element.style.minWidth = 20f;
+                element.style.maxWidth = 20f;
+
+                var image = element.Q<Image>();
+                if (image != null)
+                {
+                    image.style.width = 12f;
+                    image.style.height = 12f;
+                }
+            });
             
             return button;
         }
@@ -41,11 +58,20 @@ namespace Jimothy.Utilities.Editor.Toolbar
             {
                 ApplyStyle(elementName, (element) =>
                 {
-                    T targetElement = null;
+                    T targetElement;
 
                     if (element is T typedElement)
                     {
-                        
+                        targetElement = typedElement;
+                    }
+                    else
+                    {
+                        targetElement = element.Query<T>().First();
+                    }
+
+                    if (targetElement != null)
+                    {
+                        styleAction(targetElement);
                     }
                 });
             };
@@ -100,6 +126,11 @@ namespace Jimothy.Utilities.Editor.Toolbar
                     MainToolbar.Refresh("Timescale/Slider");
                 });
             };
+
+            MainToolbarElementStyler.StyleElement<VisualElement>("Timescale/Slider", element =>
+            {
+                element.style.paddingLeft = 10f;
+            });
 
             return slider;
         }
