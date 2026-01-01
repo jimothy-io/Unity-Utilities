@@ -1,11 +1,19 @@
 ## [Unreleased]
 
-- Add VisualElement extension methods.
+
+---
+
+## [1.11.0] - 2026-01-01
+### Main toolbar improvements
+- Adds VisualElement extension methods.
+- Adds Settings menu shortcut to main toolbar.
+- Adds timescale slider to main toolbar.
+
 ---
 
 ## [1.10.2] - 2025-06-07
 ### Cleans up context menu items
-- Organize context menu items into submenus.
+- Organizes context menu items into submenus.
 
 ---
 

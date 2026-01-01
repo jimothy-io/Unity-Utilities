@@ -1,6 +1,4 @@
-## Animator
-
-### AnimatorState preview
+## AnimatorState preview
 
 - A preview of the AnimatorState in the inspector of the AnimatorController.
 
@@ -128,11 +126,21 @@
 
 ---
 
-- **Tools**:
+## Tools
+
     - `SquashAndStretch`: A MonoBehaviour that allows for squash and stretch animations.
 
 ---
 
-- **Data**:
+## Data
+
     - `RuntimeScriptableObject`: An abstract class that ensure proper initialization of runtime Scriptable Objects.
 
+---
+
+## Toolbar
+
+    - Optional timescale slider.
+    - Optional settings shortcut.
+
+---
