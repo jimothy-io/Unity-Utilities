@@ -1,9 +1,7 @@
-using System;
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.Toolbars;
 using UnityEngine.UIElements;
-using Jimothy.Utilities.Extensions;
 
 namespace Jimothy.Utilities.Editor.Toolbar
 {
@@ -47,97 +45,6 @@ namespace Jimothy.Utilities.Editor.Toolbar
             });
             
             return button;
-        }
-    }
-
-    public static class MainToolbarElementStyler
-    {
-        public static void StyleElement<T>(string elementName, Action<T> styleAction) where T : VisualElement
-        {
-            EditorApplication.delayCall += () =>
-            {
-                ApplyStyle(elementName, (element) =>
-                {
-                    T targetElement;
-
-                    if (element is T typedElement)
-                    {
-                        targetElement = typedElement;
-                    }
-                    else
-                    {
-                        targetElement = element.Query<T>().First();
-                    }
-
-                    if (targetElement != null)
-                    {
-                        styleAction(targetElement);
-                    }
-                });
-            };
-        }
-
-        private static void ApplyStyle(string elementName, Action<VisualElement> styleCallback)
-        {
-            var element = FindElementByName(elementName);
-            if (element == null) return;
-            
-            styleCallback(element);
-        }
-
-        private static VisualElement FindElementByName(string name)
-        {
-            var windows = Resources.FindObjectsOfTypeAll<EditorWindow>();
-            foreach (var window in windows)
-            {
-                var root = window.rootVisualElement;
-                if (root == null) continue;
-
-                VisualElement element;
-                if ((element = root.FindElementByName(name)) != null) return element;
-                if ((element = root.FindElementByTooltip(name)) != null) return element;
-            }
-
-            return null;
-        }
-    }
-    
-    
-    
-
-    public class MainToolbarTimescaleSlider
-    {
-        private const float MinTimeScale = 0f;
-        private const float MaxTimeScale = 5f;
-        private const float Padding = 10f;
-
-        [MainToolbarElement("Timescale/Slider", defaultDockPosition = MainToolbarDockPosition.Middle)]
-        public static MainToolbarElement TimeSlider()
-        {
-            var content = new MainToolbarContent("Timescale", "Timescale");
-            var slider =
-                new MainToolbarSlider(content, Time.timeScale, MinTimeScale, MaxTimeScale, OnSliderValueChanged);
-
-            slider.populateContextMenu = (menu) =>
-            {
-                menu.AppendAction("Reset", _ =>
-                {
-                    Time.timeScale = 1f;
-                    MainToolbar.Refresh("Timescale/Slider");
-                });
-            };
-
-            MainToolbarElementStyler.StyleElement<VisualElement>("Timescale/Slider", element =>
-            {
-                element.style.paddingLeft = 10f;
-            });
-
-            return slider;
-        }
-
-        static void OnSliderValueChanged(float value)
-        {
-            Time.timeScale = value;
         }
     }
 }
