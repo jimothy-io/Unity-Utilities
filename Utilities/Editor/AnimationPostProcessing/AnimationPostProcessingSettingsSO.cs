@@ -15,6 +15,5 @@ namespace Jimothy.Utilities.Editor.AnimationPostProcessing
         public bool LoopTime = true;
         public bool RenameClips = true;
         public bool ForceEditorApply = true;
-        public bool ExtractTextures = false;
     }
 }
