@@ -3,6 +3,14 @@
 
 ---
 
+## [1.11.1] - 2026-04-07
+### Improves guarding and removes deprecated animation property
+- Improved guarding in AnimationPostProcessor.
+- Removes ExternalTextures processing from AnimationPostProcessor (deprecated).
+- Removes ExternalTextures property from AnimationPostProcessingSettingsSO.
+
+---
+
 ## [1.11.0] - 2026-01-01
 ### Main toolbar improvements
 - Adds VisualElement extension methods.

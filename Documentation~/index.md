@@ -18,7 +18,6 @@
     - bool LoopTime
     - bool RenameClips
     - bool ForceEditorApply
-    - bool ExtractTextures
 - Consider keeping `Enabled` set to false until you are ready to import your animations and set it to false afterwards
   as well to prevent unnecessary warnings and/or errors.
 - Import your model and configure the settings as needed.
