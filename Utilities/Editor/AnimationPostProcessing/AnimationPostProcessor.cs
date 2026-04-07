@@ -21,14 +21,21 @@ namespace Jimothy.Utilities.Editor.AnimationPostProcessing
 
             // Check if asset is in the specified folder.
             var importer = assetImporter as ModelImporter;
-            AssetDatabase.ImportAsset(importer?.assetPath);
-
-            // Extract materials and textures.
-            if (_settings.ExtractTextures)
+            if (importer == null)
             {
-                importer.ExtractTextures(Path.GetDirectoryName(importer.assetPath));
-                importer.materialLocation = ModelImporterMaterialLocation.External;
+                Debug.LogError("Failed to cast importer to ModelImporter.");
+                return;
             }
+
+            AssetDatabase.ImportAsset(importer.assetPath);
+
+            // Deprecated - Replacement?
+            // Extract materials and textures.
+            // if (_settings.ExtractTextures)
+            // {
+            //     importer.ExtractTextures(Path.GetDirectoryName(importer.assetPath));
+            //     importer.materialLocation = ModelImporterMaterialLocation.External;
+            // }
 
             // Extract avatar from the reference FBX if not already specified.
             if (_referenceAvatar == null)
@@ -48,9 +55,9 @@ namespace Jimothy.Utilities.Editor.AnimationPostProcessing
 
             // Use serialization to set the avatar correctly.
             SerializedObject serializedObject =
-                new SerializedObject((UnityEngine.Object)importer.sourceAvatar);
+                new SerializedObject(importer.sourceAvatar);
             using SerializedObject sourceObject =
-                new SerializedObject((UnityEngine.Object)_referenceAvatar);
+                new SerializedObject(_referenceAvatar);
             CopyHumanDescription(sourceObject, serializedObject);
             serializedObject.ApplyModifiedProperties();
 
@@ -69,10 +76,27 @@ namespace Jimothy.Utilities.Editor.AnimationPostProcessing
             if (_settings.ForceEditorApply)
             {
                 var editorType = typeof(UnityEditor.Editor).Assembly.GetType("UnityEditor.ModelImporterEditor");
+                if (editorType == null)
+                {
+                    Debug.LogError("Failed to find ModelImporterEditor via reflection.");
+                    return;
+                }
                 var nonPublic = BindingFlags.NonPublic | BindingFlags.Instance;
                 var editor = UnityEditor.Editor.CreateEditor(importer, editorType);
-                editorType.GetMethod("Apply", nonPublic).Invoke(editor, null);
-                UnityEngine.Object.DestroyImmediate(editor);
+                if (editor == null)
+                {
+                    Debug.LogError("Failed to create editor reference.");
+                    return;
+                }
+
+                var applyMethod = editorType.GetMethod("Apply", nonPublic);
+                if (applyMethod == null)
+                {
+                    Debug.LogError("Failed to find apply method on editor reference.");
+                    return;
+                }
+                applyMethod.Invoke(editor, null);
+                Object.DestroyImmediate(editor);
             }
         }
 
@@ -89,6 +113,11 @@ namespace Jimothy.Utilities.Editor.AnimationPostProcessing
             if (!_settingsLoaded || !_settings.Enabled) return;
 
             ModelImporter importer = assetImporter as ModelImporter;
+            if (importer == null)
+            {
+                Debug.LogError("Failed to cast importer to ModelImporter.");
+                return;
+            }
 
             // Check if asset is in the specified folder.
             if (!importer.assetPath.StartsWith(_settings.TargetFolder)) return;
@@ -182,7 +211,7 @@ namespace Jimothy.Utilities.Editor.AnimationPostProcessing
                 clipAnimation.mirror = referenceClip.mirror;
                 clipAnimation.wrapMode = referenceClip.wrapMode;
             }
-            
+
             modelImporter.clipAnimations = defaultClipAnimations;
 
             return modelImporter;
