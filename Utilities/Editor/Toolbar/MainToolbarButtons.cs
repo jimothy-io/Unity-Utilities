@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 namespace Jimothy.Utilities.Editor.Toolbar
 {
-    public class MainToolbarButtons : MonoBehaviour
+    public static class MainToolbarButtons
     {
         [MainToolbarElement("Project/Open Project Settings", defaultDockPosition = MainToolbarDockPosition.Middle)]
         public static MainToolbarElement ProjectSettingsButton()

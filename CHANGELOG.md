@@ -3,6 +3,12 @@
 
 ---
 
+## [1.11.2] - 2026-04-08
+### Minor improvements
+- MainToolbarButtons changed from MonoBehaviour to static.
+
+---
+
 ## [1.11.1] - 2026-04-07
 ### Improves guarding and removes deprecated animation property
 - Improved guarding in AnimationPostProcessor.
