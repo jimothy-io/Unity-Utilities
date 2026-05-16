@@ -2,13 +2,29 @@ using UnityEngine;
 
 namespace Jimothy.Utilities.Singletons
 {
-    public abstract class PersistentSingleton<T> : MonoBehaviour where T : Component
+    public abstract class PersistentAutoSingleton<T> : MonoBehaviour where T : Component
     {
         [SerializeField] private bool _autoUnparentOnWake = true;
 
         private static T _instance;
 
-        public static T Instance => _instance;
+        public static T Instance
+        {
+            get
+            {
+                if (_instance != null) return _instance;
+
+                _instance = FindAnyObjectByType<T>();
+                if (_instance == null)
+                {
+                    Debug.LogWarning($"No instance of {typeof(T)} found in scene! Creating one...");
+                    var newObject = new GameObject(typeof(T).Name + "(auto-generated)");
+                    _instance = newObject.AddComponent<T>();
+                }
+
+                return _instance;
+            }
+        }
 
         protected virtual void Awake() => Init();
 

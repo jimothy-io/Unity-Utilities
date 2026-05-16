@@ -1,34 +1,14 @@
-using System;
 using UnityEngine;
 
 namespace Jimothy.Utilities.Singletons
 {
-    public class Singleton<T> : MonoBehaviour where T : Component
+    public abstract class Singleton<T> : MonoBehaviour where T : Component
     {
-        protected static T _instance;
-        
-        public static T Instance
-        {
-            get
-            {
-                if (_instance != null) return _instance;
-                
-                _instance = FindAnyObjectByType<T>();
-                if (_instance == null)
-                {
-                    Debug.LogWarning($"No instance of {typeof(T)} found in scene! Creating one...");
-                    var newObject = new GameObject(typeof(T).Name + "(auto-generated)");
-                    _instance = newObject.AddComponent<T>();
-                }
+        private static T _instance;
 
-                return _instance;
-            }
-        }
+        public static T Instance => _instance;
 
-        protected virtual void Awake()
-        {
-            Init();
-        }
+        protected virtual void Awake() => Init();
 
         protected virtual void Init()
         {
@@ -37,6 +17,10 @@ namespace Jimothy.Utilities.Singletons
             if (_instance == null)
             {
                 _instance = this as T;
+            }
+            else if (_instance != this)
+            {
+                Destroy(gameObject);
             }
         }
     }
