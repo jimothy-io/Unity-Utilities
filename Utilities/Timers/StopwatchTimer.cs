@@ -5,16 +5,16 @@ namespace Jimothy.Utilities.Timers
         public StopwatchTimer() : base(0f)
         {
         }
-        
+
         public override float Progress => Time;
 
         public override void Tick(float deltaTime)
         {
             if (!IsRunning) return;
-            
+
             Time += deltaTime;
         }
-        
+
         public void Reset() => Time = 0f;
     }
 }

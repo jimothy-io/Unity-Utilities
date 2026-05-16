@@ -57,15 +57,17 @@
         - Event that gets invoked when the timer starts.
     - Action OnTimerStop
         - Event that gets invoked when the timer stops.
-    - float Progress
-        - The current progress of the timer as a fraction.
     - Concrete classes:
-        - `StopwatchTimer`: A timer that counts up.
-            - override void Progress(float deltaTime)
-                - Always returns -1f
-        - `CountdownTimer`: A timer that counts down.
+        - `StopwatchTimer`: A timer that counts up; raises event on start and stop.
+            - float Progress
+              - Returns elapsed time in seconds.
+        - `CountdownTimer`: A timer that counts down; raises events on start and stop.
             - bool IsFinished
-                - Returns true when the timer has reached zero.
+              - Returns true when the timer has reached zero.
+            - float Progress
+              - Returns the fraction of the timer that is remaining; starts at 1, decreases to 0.
+            - float RemainingTime
+              - Returns the remaining time in seconds.
 
 ---
 

@@ -6,8 +6,6 @@ namespace Jimothy.Utilities.Timers
         {
         }
 
-        public override float Progress => 1 - (Time / InitialTime);
-
         public override void Tick(float deltaTime)
         {
             if (!IsRunning) return;
@@ -23,6 +21,8 @@ namespace Jimothy.Utilities.Timers
                 Stop();
             }
         }
+
+        public override float Progress => 1 - (Time / InitialTime);
 
         public bool IsFinished => Time <= 0f;
 

@@ -1,5 +1,13 @@
 ## [Unreleased]
 
+---
+
+## [2.0.0] - 2026-05-16
+### Timer adjustments and singleton changes
+- Renames existing singletons; prefix with `Auto`.
+- Adds regular singletons that don't auto-instantiate using the old names.
+- Timer event names changed.
+- StopwatchTimer.Progress now returns elapsed time in seconds.
 
 ---
 
