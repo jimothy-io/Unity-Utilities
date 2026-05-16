@@ -67,20 +67,20 @@ namespace Utilities.Timers.Tests
         }
 
         [Test]
-        public void StopwatchTimer_ProgressIsNegativeOne_Always()
+        public void StopwatchTimer_ProgressEqualsTime_Always()
         {
             var timer = new StopwatchTimer();
         
-            Assert.AreEqual(-1f, timer.Progress, AcceptableDelta);
+            Assert.AreEqual(0f, timer.Progress, AcceptableDelta);
         
             timer.Start();
-            Assert.AreEqual(-1f, timer.Progress, AcceptableDelta);
+            Assert.AreEqual(0f, timer.Progress, AcceptableDelta);
 
             timer.Tick(1f);
-            Assert.AreEqual(-1f, timer.Progress, AcceptableDelta);
+            Assert.AreEqual(1f, timer.Progress, AcceptableDelta);
 
             timer.Stop();
-            Assert.AreEqual(-1f, timer.Progress, AcceptableDelta);
+            Assert.AreEqual(1f, timer.Progress, AcceptableDelta);
         }
 
         [Test]
