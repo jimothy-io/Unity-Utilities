@@ -16,17 +16,20 @@ namespace Jimothy.Utilities.Timers
             {
                 Time -= deltaTime;
             }
+
             if (Time <= 0f)
             {
                 Time = 0f;
                 Stop();
             }
         }
-        
+
         public bool IsFinished => Time <= 0f;
 
+        public float RemainingTime => Time;
+
         public void Reset() => Time = InitialTime;
-        
+
         public void Reset(float value)
         {
             InitialTime = value;

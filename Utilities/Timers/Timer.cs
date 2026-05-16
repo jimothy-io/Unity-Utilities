@@ -7,11 +7,10 @@ namespace Jimothy.Utilities.Timers
         protected float InitialTime;
         protected float Time;
         public bool IsRunning { get; private set; }
-        
         public abstract float Progress { get; }
 
-        public Action OnTimerStart = delegate { };
-        public Action OnTimerStop = delegate { };
+        public Action TimerStarted = () => { };
+        public Action TimerStopped = () => { };
 
         protected Timer(float value)
         {
@@ -25,7 +24,7 @@ namespace Jimothy.Utilities.Timers
             if (!IsRunning)
             {
                 IsRunning = true;
-                OnTimerStart.Invoke();
+                TimerStarted.Invoke();
             }
         }
 
@@ -34,16 +33,16 @@ namespace Jimothy.Utilities.Timers
             if (IsRunning)
             {
                 IsRunning = false;
-                OnTimerStop.Invoke();
+                TimerStopped.Invoke();
             }
         }
-        
+
         public void Resume() => IsRunning = true;
-        
+
         public void Pause() => IsRunning = false;
-        
+
         public float GetTime() => Time;
-        
+
         public abstract void Tick(float deltaTime);
     }
 }

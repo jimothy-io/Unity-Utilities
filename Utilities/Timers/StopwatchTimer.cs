@@ -6,7 +6,7 @@ namespace Jimothy.Utilities.Timers
         {
         }
         
-        public override float Progress => -1f;
+        public override float Progress => Time;
 
         public override void Tick(float deltaTime)
         {
