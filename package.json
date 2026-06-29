@@ -2,8 +2,8 @@
 	"name": "io.jimothy.junityutilities",
 	"displayName": "jUnityUtilities",
 	"description": "Various utilities that make Unity development more enjoyable.",
-	"unity": "6000.0",
-	"version": "2.0.0",
+	"unity": "6000.5",
+	"version": "2.0.1",
 	"documentationUrl": "https://github.com/itsJimothy/Unity-Utilities/blob/main/Documentation~/index.md",
 	"author": {
 		"name": "Jimothy",

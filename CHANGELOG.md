@@ -2,6 +2,13 @@
 
 ---
 
+## [2.0.1] - 2026-06-29
+### EntityId API compliance
+- Updates animator utilities to comply with EntityId API.
+- Updates minimum Unity version to 6.5.
+
+---
+
 ## [2.0.0] - 2026-05-16
 ### Timer adjustments and singleton changes
 - Renames existing singletons; prefix with `Auto`.
