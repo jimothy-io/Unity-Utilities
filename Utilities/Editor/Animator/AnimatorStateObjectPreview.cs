@@ -13,7 +13,7 @@ namespace Jimothy.Utilities.Editor.Animator
         private static FieldInfo _cachedStopTimeField;
 
         private UnityEditor.Editor _preview;
-        private int _animationClipId;
+        private EntityId _animationClipId;
 
         public override void Initialize(Object[] targets)
         {
@@ -27,7 +27,7 @@ namespace Jimothy.Utilities.Editor.Animator
             if (clip != null)
             {
                 _preview = UnityEditor.Editor.CreateEditor(clip);
-                _animationClipId = clip.GetInstanceID();
+                _animationClipId = clip.GetEntityId();
             }
         }
 
@@ -55,11 +55,11 @@ namespace Jimothy.Utilities.Editor.Animator
             base.OnInteractivePreviewGUI(r, background);
 
             AnimationClip currentClip = GetAnimationClip(target as AnimatorState);
-            if (currentClip != null && currentClip.GetInstanceID() != _animationClipId)
+            if (currentClip != null && currentClip.GetEntityId() != _animationClipId)
             {
                 CleanupPreviewEditor();
                 _preview = UnityEditor.Editor.CreateEditor(currentClip);
-                _animationClipId = currentClip.GetInstanceID();
+                _animationClipId = currentClip.GetEntityId();
                 return;
             }
 
